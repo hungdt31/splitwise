@@ -1,0 +1,48 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '4.0.4'
+	id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.splitwise'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-webmvc'
+	// Jackson 3.x (Spring Boot 4.x dùng tools.jackson, đã có trong starter-webmvc)
+	implementation 'tools.jackson.core:jackson-databind'
+	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'org.postgresql:postgresql'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+	testCompileOnly 'org.projectlombok:lombok'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	testAnnotationProcessor 'org.projectlombok:lombok'
+}
+
+bootRun {
+	// Giới hạn bộ nhớ JVM để tránh lỗi paging file quá nhỏ trên Windows
+	jvmArgs = [
+		'-Xms128m',
+		'-Xmx512m',
+		'-XX:MaxMetaspaceSize=256m',
+		'-XX:+UseSerialGC'   // Serial GC nhẹ hơn G1 GC, phù hợp cho dev
+	]
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
