@@ -57,6 +57,16 @@ public class GlobalExceptionHandler {
     }
 
     /**
+     * 400 - Vi phạm nghiệp vụ hoặc tham số không hợp lệ (IllegalArgumentException từ service).
+     */
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<ApiResponse<Void>> handleIllegalArgumentException(IllegalArgumentException ex) {
+        return ResponseEntity
+                .status(HttpStatus.BAD_REQUEST)
+                .body(ApiResponse.error(400, ex.getMessage()));
+    }
+
+    /**
      * 400 - Dữ liệu đầu vào không hợp lệ (@Valid annotation).
      */
     @ExceptionHandler(MethodArgumentNotValidException.class)

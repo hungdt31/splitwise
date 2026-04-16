@@ -1,0 +1,1218 @@
+﻿=== PAGE 1 ===
+EVENTMATE
+Quáº£n lĂ½ sá»± kiá»‡n & chia tiá»n nhĂ³m
+Product Specification Document
+PhiĂªn báº£n
+1.0.0 - MVP
+NgĂ y táº¡o
+ThĂ¡ng 4, 2026
+Tech Stack
+React Native | Java (Spring Boot)
+Design System
+Nexus DS (custom, Indigo/Emerald base)
+
+=== PAGE 2 ===
+0. Má»¥c Lá»¥c & Tá»•ng Quan
+#
+Ná»™i dung
+Trang
+1
+Design System â€” Nexus DS
+3
+2
+Kiáº¿n trĂºc há»‡ thá»‘ng
+5
+3
+EPIC / FEATURE / USER STORIES / TASKS
+6
+3.1
+EPIC 1 â€” Quáº£n lĂ½ tĂ i khoáº£n & nhĂ³m
+6
+3.2
+EPIC 2 â€” Quáº£n lĂ½ sá»± kiá»‡n
+10
+3.3
+EPIC 3 â€” Theo dĂµi chi phĂ­ & chia tiá»n
+14
+3.4
+EPIC 4 â€” Thanh toĂ¡n & xĂ¡c nháº­n
+18
+3.5
+EPIC 5 â€” ThĂ´ng bĂ¡o & hoáº¡t Ä‘á»™ng
+21
+3.6
+EPIC 6 â€” PhĂ¢n tĂ­ch & bĂ¡o cĂ¡o
+24
+4
+Backlog tá»•ng há»£p
+27
+
+=== PAGE 3 ===
+1. Design System â€” Nexus DS
+Nexus DS lĂ  design system ná»™i bá»™ Ä‘Æ°á»£c xĂ¢y dá»±ng cho EventMate. Láº¥y cáº£m há»©ng tá»« Radix UI Primitives vĂ 
+Tailwind CSS, Nexus DS Ä‘áº£m báº£o tĂ­nh nháº¥t quĂ¡n trĂªn toĂ n bá»™ á»©ng dá»¥ng React Native vĂ  tĂ¡i sá»­ dá»¥ng tá»‘i Ä‘a cĂ¡c
+component.
+1.1 Ná»n táº£ng thiáº¿t káº¿ (Design Tokens)
+MĂ u sáº¯c (Color Tokens)
+Token
+Hex
+Swatch
+Má»¥c Ä‘Ă­ch
+brand.primary
+#4F46E5
+Indigo-600
+CTA, active state, link
+brand.primary-light
+#E0E7FF
+Indigo-100
+Background chip, badge
+brand.primary-dark
+#3730A3
+Indigo-700
+Pressed state, heading
+semantic.success
+#10B981
+Emerald-500
+ÄĂ£ thanh toĂ¡n, xĂ¡c nháº­n
+semantic.warning
+#F59E0B
+Amber-500
+ChÆ°a thanh toĂ¡n, cáº£nh bĂ¡o
+semantic.danger
+#EF4444
+Red-500
+Lá»—i, xoĂ¡, tá»« chá»‘i
+semantic.accent
+#06B6D4
+Cyan-500
+Tag ná»•i báº­t, highlight
+neutral.900
+#111827
+Gray-900
+Text chĂ­nh
+neutral.700
+#374151
+Gray-700
+Text phá»¥
+neutral.500
+#6B7280
+Gray-500
+Placeholder, hint
+neutral.200
+#E5E7EB
+Gray-200
+Divider, border
+neutral.100
+#F3F4F6
+Gray-100
+Background trang, card
+Typography
+Token
+Size (sp)
+Weight
+DĂ¹ng cho
+text.display
+28
+700 Bold
+TiĂªu Ä‘á» mĂ n hĂ¬nh lá»›n
+text.heading-1
+22
+700 Bold
+Heading section
+text.heading-2
+18
+600
+SemiBold
+Heading card, modal
+text.body-lg
+16
+400
+Regular
+Body text chĂ­nh
+text.body-sm
+14
+400
+Regular
+Body phá»¥, mĂ´ táº£
+text.caption
+12
+400
+Regular
+Caption, timestamp
+text.label
+12
+500
+Medium
+Label input, form
+text.overline
+10
+600
+SemiBold /
+UPPER
+Section header nhá»
+
+=== PAGE 4 ===
+Spacing & Radius
+Token
+Value
+MĂ´ táº£
+space.1
+4dp
+Khoáº£ng cĂ¡ch icon - text
+space.2
+8dp
+Padding ná»™i bá»™ nhá»
+space.3
+12dp
+Padding chip, badge
+space.4
+16dp
+Padding card, list item
+space.5
+20dp
+Padding section
+space.6
+24dp
+Padding mĂ n hĂ¬nh (horizontal)
+radius.sm
+4dp
+Tag, chip nhá»
+radius.md
+8dp
+Card, input, button
+radius.lg
+16dp
+Bottom sheet, modal card
+radius.full
+9999dp
+Pill button, avatar
+
+=== PAGE 5 ===
+1.2 Component Library (Nexus DS)
+Táº¥t cáº£ component Ä‘á»u Ä‘Æ°á»£c build dÆ°á»›i dáº¡ng primitive + variant. Má»—i component export ra Props interface
+TypeScript vĂ  Storybook story.
+Buttons
+Variant
+Tráº¡ng thĂ¡i
+Props chĂ­nh
+Primary
+default / pressed /
+disabled / loading
+label, onPress, loading, leftIcon, rightIcon, fullWidth
+Secondary
+default / pressed /
+disabled
+label, onPress, leftIcon
+Ghost
+default / hover /
+disabled
+label, onPress, color
+Danger
+default / pressed /
+disabled
+label, onPress, confirmText
+IconButton
+default / pressed /
+disabled
+icon, size (sm|md|lg), badge
+FAB
+default / mini
+icon, label?, onPress, position
+Badge & Chip
+Component
+Variant/Color
+Props
+Badge
+success | warning |
+danger | info | neutral
+label, variant, size (sm|md), dot (boolean)
+Chip
+filled | outlined | ghost
+label, variant, color, leftIcon, onClose?, onPress?
+Tag
+category tag
+label, color, size
+StatusPill
+paid | pending | partial |
+cancelled
+status, showLabel
+Form Controls
+Component
+Variant
+Props
+TextInput
+default | error | success
+| disabled
+label, placeholder, helper, errorMsg, leftIcon, rightIcon,
+value, onChangeText
+Dropdown / Select
+single | multi-select
+label, options[ ], value, onChange, searchable,
+placeholder
+DateTimePicker
+date | time | datetime
+label, value, onChange, minDate, maxDate
+Toggle / Switch
+â€”
+label, value, onValueChange, disabled
+Stepper
+â€”
+value, min, max, step, onChange
+CurrencyInput
+â€”
+value, currency, onChange, maxValue
+SearchBar
+â€”
+value, onChangeText, onClear, placeholder
+Layout & Feedback
+
+=== PAGE 6 ===
+Component
+MĂ´ táº£ & Props chĂ­nh
+Card
+Surface chá»©a ná»™i dung. Props: elevation (0-3), radius, padding, onPress
+Avatar
+áº¢nh ngÆ°á»i dĂ¹ng. Props: uri, initials, size (xs-xl), badge (status dot), onPress
+AvatarGroup
+Stack nhiá»u avatar. Props: users[], maxCount, size
+Divider
+ÄÆ°á»ng káº». Props: orientation, spacing, label (optional)
+EmptyState
+MĂ n hĂ¬nh rá»—ng. Props: icon, title, subtitle, action (Button)
+Toast
+ThĂ´ng bĂ¡o ná»•i. Props: message, variant, duration, action
+BottomSheet
+Sheet tá»« dÆ°á»›i. Props: isVisible, onClose, snapPoints, title
+Skeleton
+Loading placeholder. Props: width, height, radius, animated
+ProgressBar
+Thanh tiáº¿n trĂ¬nh. Props: value (0-100), color, height, label
+SplitBar
+Chia tiá»n visualize. Props: segments[{user,amount,color}], total
+
+=== PAGE 7 ===
+2. Kiáº¿n TrĂºc Há»‡ Thá»‘ng
+2.1 Tech Stack
+Layer
+CĂ´ng nghá»‡
+Ghi chĂº
+Mobile
+React Native (Expo)
+TypeScript, Expo Router (file-based nav)
+State Mgmt
+Zustand + React Query
+Local state + server state
+UI Library
+Nexus DS (internal)
+TĂ¡i sá»­ dá»¥ng component
+Backend
+Java 21 / Spring Boot 3
+REST API + WebSocket
+Database
+PostgreSQL
+Main DB
+Cache
+Redis
+Session, realtime pub/sub
+Auth
+JWT + Refresh Token
+OAuth2 (Google/Facebook) optional
+Storage
+AWS S3 / Cloudflare R2
+Avatar, receipt images
+Push Notif.
+Firebase FCM
+Android + iOS
+CI/CD
+GitHub Actions
+Build + Test + Deploy
+2.2 SÆ¡ Ä‘á»“ module Backend (Domain-Driven)
+â€¢
+user-service: Quáº£n lĂ½ tĂ i khoáº£n, profile, auth
+â€¢
+group-service: Quáº£n lĂ½ nhĂ³m, thĂ nh viĂªn
+â€¢
+event-service: CRUD sá»± kiá»‡n, tráº¡ng thĂ¡i, phĂ¢n loáº¡i
+â€¢
+expense-service: ThĂªm chi phĂ­, danh má»¥c, file Ä‘Ă­nh kĂ¨m
+â€¢
+split-service: Thuáº­t toĂ¡n chia tiá»n (equal / custom / percent)
+â€¢
+payment-service: Ghi nháº­n thanh toĂ¡n, lá»‹ch sá»­, balance
+â€¢
+notification-service: Push, in-app, activity feed
+â€¢
+analytics-service: BĂ¡o cĂ¡o, thá»‘ng kĂª chi tiĂªu
+
+=== PAGE 8 ===
+3. EPIC / FEATURE / USER STORIES / TASKS
+EPIC 1 â€” Quáº£n LĂ½ TĂ i Khoáº£n & NhĂ³m
+MĂ´ táº£ EPIC
+NgÆ°á»i dĂ¹ng cĂ³ thá»ƒ Ä‘Äƒng kĂ½, Ä‘Äƒng nháº­p, quáº£n lĂ½ há»“ sÆ¡ cĂ¡ nhĂ¢n vĂ  táº¡o/quáº£n lĂ½ nhĂ³m báº¡n bĂ¨/gia Ä‘Ă¬nh Ä‘á»ƒ
+cĂ¹ng theo dĂµi sá»± kiá»‡n vĂ  chi tiĂªu.
+Feature 1.1 â€” XĂ¡c thá»±c & ÄÄƒng kĂ½
+ID
+User Story
+Tasks
+Priority
+US-001
+LĂ  ngÆ°á»i dĂ¹ng má»›i, tĂ´i
+muá»‘n Ä‘Äƒng kĂ½ báº±ng
+email/password Ä‘á»ƒ táº¡o tĂ i
+khoáº£n.
+T1: API POST /auth/register (Spring Security +
+BCrypt) T2: Validate email uniqueness, password
+strength T3: Gá»­i email xĂ¡c thá»±c OTP T4: Screen
+ÄÄƒng kĂ½ (Nexus: TextInput, Button, Badge lá»—i) T5:
+Unit test AuthService
+P0
+US-002
+TĂ´i muá»‘n Ä‘Äƒng nháº­p vĂ 
+giá»¯ session trĂªn thiáº¿t bá»‹.
+T1: API POST /auth/login â†’ JWT + Refresh Token
+T2: Secure storage token (Expo SecureStore) T3:
+Auto-refresh token middleware T4: Screen ÄÄƒng nháº­p
++ nhá»› máº­t kháº©u T5: Test expired token flow
+P0
+US-003
+TĂ´i muá»‘n Ä‘Äƒng nháº­p báº±ng
+Google Ä‘á»ƒ khĂ´ng cáº§n nhá»›
+password.
+T1: OAuth2 Google integration (Spring) T2: React
+Native Google Sign-In T3: Link tĂ i khoáº£n Google vá»›i
+user entity T4: Handle first-time OAuth user creation
+P1
+US-004
+TĂ´i muá»‘n Ä‘áº·t láº¡i máº­t kháº©u
+qua email.
+T1: API POST /auth/forgot-password (gá»­i link reset)
+T2: Token 1-láº§n, háº¿t háº¡n 15 phĂºt T3: Screen nháº­p
+email + Screen máº­t kháº©u má»›i T4: Toast thĂ´ng bĂ¡o
+Nexus khi thĂ nh cĂ´ng
+P1
+Feature 1.2 â€” Há»“ SÆ¡ CĂ¡ NhĂ¢n
+ID
+User Story
+Tasks
+Priority
+US-005
+TĂ´i muá»‘n cáº­p nháº­t tĂªn,
+áº£nh Ä‘áº¡i diá»‡n vĂ  sá»‘ Ä‘iá»‡n
+thoáº¡i.
+T1: API PATCH /users/me T2: Upload avatar lĂªn S3,
+resize 200x200 T3: Screen Profile vá»›i Avatar (Nexus),
+TextInput T4: Crop áº£nh (expo-image-manipulator)
+P1
+US-006
+TĂ´i muá»‘n xem lá»‹ch sá»­ cĂ¡c
+sá»± kiá»‡n mĂ¬nh Ä‘Ă£ tham gia.
+T1: API GET /users/me/events?page=&limit= T2:
+Screen Activity vá»›i danh sĂ¡ch dáº¡ng Card T3: Skeleton
+Nexus trong lĂºc load T4: Filter theo tráº¡ng thĂ¡i báº±ng
+Chip Nexus
+P2
+US-007
+TĂ´i muá»‘n xem tá»•ng sá»‘
+tiá»n tĂ´i ná»£ vĂ  Ä‘Æ°á»£c ná»£
+trĂªn toĂ n há»‡ thá»‘ng.
+T1: API GET /users/me/balance-summary T2: Widget
+Balance trĂªn Profile dĂ¹ng SplitBar Nexus T3: Drill-
+down vĂ o tá»«ng nhĂ³m
+P2
+Feature 1.3 â€” Quáº£n LĂ½ NhĂ³m
+ID
+User Story
+Tasks
+Priority
+US-008
+TĂ´i muá»‘n táº¡o má»™t nhĂ³m
+má»›i vĂ  Ä‘áº·t tĂªn, áº£nh bĂ¬a
+cho nhĂ³m.
+T1: API POST /groups T2: Upload áº£nh bĂ¬a nhĂ³m S3
+T3: Screen Táº¡o nhĂ³m (TextInput tĂªn, chá»n áº£nh bĂ¬a)
+T4: Validation tĂªn nhĂ³m 2-50 kĂ½ tá»±
+P0
+US-009
+TĂ´i muá»‘n má»i thĂ nh viĂªn
+T1: API POST /groups/:id/invitations (táº¡o link invite)
+P0
+
+=== PAGE 9 ===
+ID
+User Story
+Tasks
+Priority
+vĂ o nhĂ³m qua link hoáº·c
+tĂ¬m kiáº¿m email.
+T2: Deep link xá»­ lĂ½ invite T3: API GET
+/users/search?q= (search email) T4: Screen má»i
+thĂ nh viĂªn + AvatarGroup Nexus T5: Push thĂ´ng bĂ¡o
+tá»›i ngÆ°á»i Ä‘Æ°á»£c má»i
+US-010
+TĂ´i muá»‘n xem vĂ  quáº£n lĂ½
+danh sĂ¡ch thĂ nh viĂªn
+(kick, thay Ä‘á»•i quyá»n).
+T1: API GET/PATCH/DELETE /groups/:id/members
+T2: Role: ADMIN, MEMBER T3: Screen Members vá»›i
+Avatar, Badge vai trĂ² T4: BottomSheet Nexus khi tap
+vĂ o member
+P1
+US-011
+TĂ´i muá»‘n rá»i khá»i hoáº·c
+giáº£i tĂ¡n nhĂ³m.
+T1: API DELETE /groups/:id/members/me (rá»i) T2:
+API DELETE /groups/:id (giáº£i tĂ¡n, chá»‰ ADMIN) T3:
+Guard: khĂ´ng cho giáº£i tĂ¡n náº¿u cĂ²n ná»£ chÆ°a giáº£i quyáº¿t
+T4: Dialog xĂ¡c nháº­n dĂ¹ng Nexus Danger Button
+P1
+US-012
+TĂ´i muá»‘n tĂ¬m kiáº¿m vĂ  lá»c
+danh sĂ¡ch nhĂ³m cá»§a
+mĂ¬nh.
+T1: API GET /groups?q=&sort= T2: SearchBar Nexus
+trĂªn mĂ n hĂ¬nh Groups T3: Chip filter: Hoáº¡t Ä‘á»™ng / LÆ°u
+trá»¯
+P2
+
+=== PAGE 10 ===
+EPIC 2 â€” Quáº£n LĂ½ Sá»± Kiá»‡n
+MĂ´ táº£ EPIC
+ThĂ nh viĂªn nhĂ³m cĂ³ thá»ƒ táº¡o sá»± kiá»‡n (Ä‘Ă¡nh cáº§u lĂ´ng, Äƒn uá»‘ng, du lá»‹ch...), má»i ngÆ°á»i tham gia, theo dĂµi
+tráº¡ng thĂ¡i vĂ  ghi nháº­n thĂ´ng tin sá»± kiá»‡n.
+Feature 2.1 â€” Táº¡o & Chá»‰nh Sá»­a Sá»± Kiá»‡n
+ID
+User Story
+Tasks
+Priority
+US-013
+TĂ´i muá»‘n táº¡o sá»± kiá»‡n má»›i
+vá»›i tĂªn, ngĂ y giá», Ä‘á»‹a
+Ä‘iá»ƒm vĂ  mĂ´ táº£.
+T1: API POST /events T2: Form Táº¡o sá»± kiá»‡n:
+TextInput, DateTimePicker, Dropdown nhĂ³m (Nexus)
+T3: Google Maps integration chá»n Ä‘á»‹a Ä‘iá»ƒm T4:
+Schema validation (Hibernate Validator) T5: Tráº£ vá»
+eventId sau khi táº¡o
+P0
+US-014
+TĂ´i muá»‘n phĂ¢n loáº¡i sá»±
+kiá»‡n (thá»ƒ thao, Äƒn uá»‘ng,
+du lá»‹ch, khĂ¡c).
+T1: Enum EventCategory backend T2: Dropdown
+chá»n danh má»¥c trĂªn form T3: Tag/Chip Nexus hiá»ƒn thá»‹
+category trĂªn card T4: Filter event theo category
+P1
+US-015
+TĂ´i muá»‘n chá»‰nh sá»­a thĂ´ng
+tin sá»± kiá»‡n trÆ°á»›c khi diá»…n
+ra.
+T1: API PATCH /events/:id (chá»‰ ORGANIZER) T2:
+Pre-fill form vá»›i data hiá»‡n táº¡i T3: ThĂ´ng bĂ¡o push tá»›i
+thĂ nh viĂªn khi event thay Ä‘á»•i T4: Audit log lÆ°u lá»‹ch sá»­
+thay Ä‘á»•i
+P1
+US-016
+TĂ´i muá»‘n huá»· hoáº·c xoĂ¡
+sá»± kiá»‡n.
+T1: API PATCH /events/:id/status â†’ CANCELLED
+T2: XoĂ¡ má»m (soft delete) T3: Guard: khĂ´ng xoĂ¡ náº¿u
+Ä‘Ă£ cĂ³ expense T4: Dialog Danger Button Nexus + lĂ½
+do huá»·
+P1
+Feature 2.2 â€” Tham Gia Sá»± Kiá»‡n & RSVP
+ID
+User Story
+Tasks
+Priority
+US-017
+TĂ´i muá»‘n má»i thĂ nh viĂªn
+nhĂ³m hoáº·c khĂ¡ch ngoĂ i
+tham gia sá»± kiá»‡n.
+T1: API POST /events/:id/participants T2: Chá»n tá»«
+danh sĂ¡ch member nhĂ³m + Dropdown Nexus T3:
+ThĂªm khĂ¡ch (tĂªn, khĂ´ng cáº§n tĂ i khoáº£n) T4: Push
+notification má»i tham gia
+P0
+US-018
+TĂ´i muá»‘n xĂ¡c nháº­n
+(RSVP) tham gia hoáº·c tá»«
+chá»‘i sá»± kiá»‡n.
+T1: API PATCH /events/:id/participants/me vá»›i status
+(GOING/NOT_GOING/MAYBE) T2: StatusPill Nexus
+hiá»ƒn thá»‹ RSVP T3: Cáº­p nháº­t sá»‘ ngÆ°á»i trĂªn event card
+T4: ThĂ´ng bĂ¡o cho organizer
+P1
+US-019
+TĂ´i muá»‘n xem danh sĂ¡ch
+ai sáº½ tham gia sá»± kiá»‡n.
+T1: API GET /events/:id/participants T2: AvatarGroup
++ count badge trĂªn Event Detail T3: PhĂ¢n loáº¡i GOING
+/ MAYBE / NO RESPONSE báº±ng Tab Nexus
+P1
+Feature 2.3 â€” Dashboard & KhĂ¡m PhĂ¡ Sá»± Kiá»‡n
+ID
+User Story
+Tasks
+Priority
+US-020
+TĂ´i muá»‘n tháº¥y tá»•ng quan
+cĂ¡c sá»± kiá»‡n sáº¯p tá»›i vĂ 
+Ä‘ang diá»…n ra.
+T1: API GET /events?upcoming=true&userId=me T2:
+Home Screen: Event Card carousel (sáº¯p tá»›i) + danh
+sĂ¡ch T3: Skeleton Nexus khi Ä‘ang táº£i T4: Empty State
+Nexus khi chÆ°a cĂ³ event
+P0
+US-021
+TĂ´i muá»‘n tĂ¬m kiáº¿m sá»±
+kiá»‡n theo tĂªn hoáº·c lá»c
+theo nhĂ³m, tráº¡ng thĂ¡i.
+T1: API GET /events?q=&groupId=&status= T2:
+SearchBar + Chip filter Nexus T3: Debounce search
+300ms T4: Highlight tá»« khoĂ¡ tĂ¬m kiáº¿m trong káº¿t quáº£
+P2
+
+=== PAGE 11 ===
+ID
+User Story
+Tasks
+Priority
+US-022
+TĂ´i muá»‘n xem lá»‹ch sá»± kiá»‡n
+theo thĂ¡ng/tuáº§n.
+T1: Calendar view (react-native-calendars) T2: Cháº¥m
+mĂ u trĂªn ngĂ y cĂ³ event T3: Tap vĂ o ngĂ y â†’ list event
+T4: Sync vá»›i tráº¡ng thĂ¡i RSVP
+P2
+
+=== PAGE 12 ===
+EPIC 3 â€” Theo DĂµi Chi PhĂ­ & Chia Tiá»n
+MĂ´ táº£ EPIC
+ÄĂ¢y lĂ  EPIC lĂµi (MVP Core). ThĂ nh viĂªn cĂ³ thá»ƒ thĂªm chi phĂ­ vĂ o sá»± kiá»‡n, há»‡ thá»‘ng tá»± Ä‘á»™ng tĂ­nh toĂ¡n sá»‘
+tiá»n má»—i ngÆ°á»i pháº£i tráº£ dá»±a trĂªn cĂ¡c chiáº¿n lÆ°á»£c chia tiá»n khĂ¡c nhau.
+Feature 3.1 â€” ThĂªm Chi PhĂ­
+ID
+User Story
+Tasks
+Priority
+US-023
+TĂ´i muá»‘n thĂªm má»™t khoáº£n
+chi phĂ­ (tiá»n sĂ¢n, tiá»n
+nÆ°á»›c) vĂ o sá»± kiá»‡n.
+T1: API POST /events/:id/expenses T2: Form
+AddExpense: CurrencyInput, TextInput (tĂªn),
+Dropdown danh má»¥c, DatePicker (Nexus) T3: Chá»n
+ngÆ°á»i Ä‘Ă£ tráº£ (payer) báº±ng Dropdown avatar T4:
+Attach áº£nh hoĂ¡ Ä‘Æ¡n (S3) T5: Realtime push tá»›i cĂ¡c
+member qua WebSocket
+P0
+US-024
+TĂ´i muá»‘n phĂ¢n loáº¡i chi phĂ­
+(sĂ¢n, nÆ°á»›c, Äƒn uá»‘ng, di
+chuyá»ƒn, khĂ¡c).
+T1: Enum ExpenseCategory backend T2: Dropdown
+chá»n danh má»¥c + icon T3: Tag mĂ u theo danh má»¥c
+trĂªn danh sĂ¡ch expense T4: Filter chi phĂ­ theo danh
+má»¥c
+P1
+US-025
+TĂ´i muá»‘n chá»‰nh sá»­a hoáº·c
+xoĂ¡ má»™t khoáº£n chi phĂ­.
+T1: API PATCH/DELETE /expenses/:id (chá»‰ ngÆ°á»i
+thĂªm vĂ o) T2: Guard: khĂ´ng xoĂ¡ náº¿u Ä‘Ă£ cĂ³ payment
+liĂªn quan T3: Cáº­p nháº­t láº¡i tĂ­nh toĂ¡n split sau khi sá»­a
+T4: Audit log thay Ä‘á»•i expense
+P1
+US-026
+TĂ´i muá»‘n xem tá»•ng chi
+phĂ­ cá»§a sá»± kiá»‡n vĂ  danh
+sĂ¡ch chi tiáº¿t.
+T1: API GET /events/:id/expenses T2:
+ExpenseSummary card vá»›i tá»•ng + breakdown danh
+má»¥c (SplitBar Nexus) T3: ExpenseList vá»›i Skeleton
+load T4: Hiá»ƒn thá»‹ avatar ngÆ°á»i Ä‘Ă£ tráº£ trĂªn má»—i item
+P0
+Feature 3.2 â€” Thuáº­t ToĂ¡n Chia Tiá»n
+ID
+User Story
+Tasks
+Priority
+US-027
+TĂ´i muá»‘n chia Ä‘á»u toĂ n
+bá»™ chi phĂ­ cho táº¥t cáº£ thĂ nh
+viĂªn tham gia.
+T1: SplitStrategy: EQUAL â€” chia Ä‘á»u totalAmount / N
+ngÆ°á»i T2: Xá»­ lĂ½ lĂ m trĂ²n (pháº§n dÆ° cá»™ng cho payer)
+T3: API GET /events/:id/split-
+summary?strategy=EQUAL T4: UI hiá»ƒn thá»‹ báº£ng ai ná»£
+ai bao nhiĂªu
+P0
+US-028
+TĂ´i muá»‘n chia theo tá»· lá»‡
+pháº§n trÄƒm tĂ¹y chá»‰nh cho
+tá»«ng ngÆ°á»i.
+T1: SplitStrategy: PERCENTAGE T2: Validate tá»•ng %
+= 100 T3: Stepper nháº­p % tá»«ng ngÆ°á»i (Nexus) T4:
+Preview realtime sá»‘ tiá»n khi thay Ä‘á»•i %
+P1
+US-029
+TĂ´i muá»‘n chia sá»‘ tiá»n cá»‘
+Ä‘á»‹nh tĂ¹y chá»‰nh cho tá»«ng
+ngÆ°á»i.
+T1: SplitStrategy: CUSTOM_AMOUNT T2: Validate
+tá»•ng custom = total expense T3: CurrencyInput tá»«ng
+ngÆ°á»i (Nexus) T4: Warning Badge Nexus náº¿u tá»•ng
+chÆ°a khá»›p
+P1
+US-030
+TĂ´i muá»‘n loáº¡i trá»« má»™t sá»‘
+thĂ nh viĂªn khá»i má»™t khoáº£n
+chi phĂ­ nháº¥t Ä‘á»‹nh.
+T1: API: includedParticipants[] per expense T2:
+Toggle chá»n/bá» tá»«ng ngÆ°á»i dĂ¹ng Avatar + checkbox
+T3: Cáº­p nháº­t láº¡i tĂ­nh toĂ¡n ngay láº­p tá»©c T4: Badge
+'KhĂ´ng tham gia' trĂªn avatar bá»‹ loáº¡i trá»«
+P1
+US-031
+TĂ´i muá»‘n xem báº£ng tĂ³m
+táº¯t 'ai ná»£ ai bao nhiĂªu' sau
+khi chia.
+T1: Thuáº­t toĂ¡n simplify debt (giáº£m sá»‘ lÆ°á»£ng giao
+dá»‹ch) T2: API GET /events/:id/debt-summary T3:
+Screen DebtSummary: Card má»—i cáº·p ná»£, Avatar,
+CurrencyBadge T4: NĂºt 'ÄĂ¡nh dáº¥u Ä‘Ă£ tráº£' ngay trĂªn
+card
+P0
+
+=== PAGE 13 ===
+EPIC 4 â€” Thanh ToĂ¡n & XĂ¡c Nháº­n
+MĂ´ táº£ EPIC
+ThĂ nh viĂªn cĂ³ thá»ƒ ghi nháº­n viá»‡c Ä‘Ă£ tráº£ tiá»n, ngÆ°á»i nháº­n xĂ¡c nháº­n, vĂ  há»‡ thá»‘ng cáº­p nháº­t tráº¡ng thĂ¡i ná»£
+realtime.
+Feature 4.1 â€” Ghi Nháº­n Thanh ToĂ¡n
+ID
+User Story
+Tasks
+Priority
+US-032
+TĂ´i muá»‘n Ä‘Ă¡nh dáº¥u má»™t
+khoáº£n ná»£ lĂ  Ä‘Ă£ tráº£ vĂ  gá»­i
+xĂ¡c nháº­n cho ngÆ°á»i nháº­n.
+T1: API POST /payments { fromUserId, toUserId,
+amount, eventId, note, proofImage } T2: Payment
+status: PENDING_CONFIRMATION T3: Push
+notification tá»›i ngÆ°á»i nháº­n T4: Upload áº£nh báº±ng
+chá»©ng (S3) T5: Screen RecordPayment vá»›i
+CurrencyInput, TextInput note, attach áº£nh
+P0
+US-033
+TĂ´i muá»‘n xĂ¡c nháº­n Ä‘Ă£
+nháº­n Ä‘Æ°á»£c tiá»n.
+T1: API PATCH /payments/:id/confirm â†’ status
+CONFIRMED T2: Cáº­p nháº­t debt balance realtime
+(WebSocket) T3: Push thĂ´ng bĂ¡o cho ngÆ°á»i tráº£ T4:
+StatusPill CONFIRMED mĂ u success
+P0
+US-034
+TĂ´i muá»‘n tá»« chá»‘i xĂ¡c
+nháº­n náº¿u sá»‘ tiá»n sai.
+T1: API PATCH /payments/:id/reject + reason T2:
+Push thĂ´ng bĂ¡o kĂ¨m lĂ½ do tá»« chá»‘i T3: Payment hiá»ƒn
+thá»‹ StatusPill REJECTED + lĂ½ do T4: Cho phĂ©p ngÆ°á»i
+tráº£ ghi nháº­n láº¡i
+P1
+US-035
+TĂ´i muá»‘n chia sáº» QR
+code hoáº·c thĂ´ng tin tĂ i
+khoáº£n Ä‘á»ƒ nháº­n tiá»n.
+T1: Screen PaymentInfo: hiá»ƒn thá»‹ bank info + QR
+(react-native-qrcode-svg) T2: LÆ°u thĂ´ng tin bank
+trong profile T3: NĂºt 'Sao chĂ©p sá»‘ tĂ i khoáº£n' T4: Deep
+link trá» tháº³ng vĂ o mĂ n hĂ¬nh thanh toĂ¡n
+P2
+Feature 4.2 â€” Lá»‹ch Sá»­ & Tráº¡ng ThĂ¡i Thanh ToĂ¡n
+ID
+User Story
+Tasks
+Priority
+US-036
+TĂ´i muá»‘n xem toĂ n bá»™ lá»‹ch
+sá»­ giao dá»‹ch thanh toĂ¡n
+cá»§a má»™t sá»± kiá»‡n.
+T1: API GET /events/:id/payments?page=&status=
+T2: TransactionList: Card vá»›i Avatar, sá»‘ tiá»n,
+StatusPill T3: Filter theo status dĂ¹ng Chip Nexus T4:
+Pull-to-refresh
+P1
+US-037
+TĂ´i muá»‘n xem tá»•ng sá»‘ dÆ°
+cá»§a tĂ´i trong má»™t sá»± kiá»‡n
+(tĂ´i ná»£/Ä‘Æ°á»£c ná»£ bao
+nhiĂªu).
+T1: API GET /events/:id/balance/me T2: BalanceCard
+trĂªn Event Detail: text mĂ u danger (ná»£) / success
+(Ä‘Æ°á»£c ná»£) T3: ProgressBar Nexus hiá»ƒn thá»‹ % Ä‘Ă£
+thanh toĂ¡n trong event
+P1
+
+=== PAGE 14 ===
+EPIC 5 â€” ThĂ´ng BĂ¡o & Hoáº¡t Äá»™ng
+MĂ´ táº£ EPIC
+NgÆ°á»i dĂ¹ng nháº­n thĂ´ng bĂ¡o realtime vá» má»i hoáº¡t Ä‘á»™ng liĂªn quan Ä‘áº¿n mĂ¬nh (sá»± kiá»‡n má»›i, chi phĂ­ Ä‘Æ°á»£c
+thĂªm, thanh toĂ¡n, nháº¯c ná»£).
+Feature 5.1 â€” Push Notification
+ID
+User Story
+Tasks
+Priority
+US-038
+TĂ´i muá»‘n nháº­n push
+notification khi cĂ³ chi phĂ­
+má»›i Ä‘Æ°á»£c thĂªm vĂ o sá»±
+kiá»‡n cá»§a tĂ´i.
+T1: FCM integration backend (Spring) T2: Notification
+template: chi phĂ­ má»›i T3: Xin quyá»n notification khi
+onboard T4: Deep link tá»« notification â†’ Event Detail
+P0
+US-039
+TĂ´i muá»‘n nháº­n thĂ´ng bĂ¡o
+nháº¯c nhá»Ÿ khi cĂ²n ná»£ chÆ°a
+tráº£.
+T1: Scheduled job (Spring @Scheduled): má»—i 24h
+kiá»ƒm tra ná»£ pending T2: Notification vá»›i sá»‘ tiá»n cáº§n
+tráº£ T3: Setting báº­t/táº¯t reminder trong Profile T4:
+KhĂ´ng gá»­i náº¿u Ä‘Ă£ gá»­i trong 24h
+P1
+US-040
+TĂ´i muá»‘n quáº£n lĂ½ loáº¡i
+thĂ´ng bĂ¡o nĂ o tĂ´i muá»‘n
+nháº­n.
+T1: NotificationPreferences entity T2: API PATCH
+/users/me/notification-preferences T3: Screen cĂ i Ä‘áº·t
+thĂ´ng bĂ¡o vá»›i Toggle Nexus T4: Categories: Sá»± kiá»‡n,
+Chi phĂ­, Thanh toĂ¡n, NhĂ³m
+P2
+Feature 5.2 â€” Activity Feed
+ID
+User Story
+Tasks
+Priority
+US-041
+TĂ´i muá»‘n xem luá»“ng hoáº¡t
+Ä‘á»™ng (activity feed) cá»§a
+tá»«ng sá»± kiá»‡n/nhĂ³m.
+T1: Event sourcing nháº¹: lÆ°u ActivityLog entity T2: API
+GET /events/:id/activities?page= T3: ActivityFeed
+screen: dĂ²ng thá»i gian vá»›i Avatar, icon hĂ nh Ä‘á»™ng,
+timestamp T4: PhĂ¢n loáº¡i: added_expense,
+payment_confirmed, member_joined, event_updated
+P2
+US-042
+TĂ´i muá»‘n tháº¥y badge sá»‘
+thĂ´ng bĂ¡o chÆ°a Ä‘á»c trĂªn
+icon chuĂ´ng.
+T1: Unread count API: GET /notifications/unread-
+count T2: Badge Nexus trĂªn tab bar icon T3:
+WebSocket push count update T4: Mark all as read
+khi má»Ÿ mĂ n hĂ¬nh notification
+P1
+
+=== PAGE 15 ===
+EPIC 6 â€” PhĂ¢n TĂ­ch & BĂ¡o CĂ¡o
+MĂ´ táº£ EPIC
+NgÆ°á»i dĂ¹ng cĂ³ thá»ƒ xem thá»‘ng kĂª chi tiĂªu cĂ¡ nhĂ¢n vĂ  nhĂ³m, giĂºp hiá»ƒu rĂµ hÆ¡n vá» thĂ³i quen chi tiĂªu khi
+tham gia cĂ¡c hoáº¡t Ä‘á»™ng nhĂ³m.
+Feature 6.1 â€” Thá»‘ng KĂª CĂ¡ NhĂ¢n
+ID
+User Story
+Tasks
+Priority
+US-043
+TĂ´i muá»‘n xem tá»•ng chi
+tiĂªu cá»§a tĂ´i theo thĂ¡ng
+trĂªn táº¥t cáº£ sá»± kiá»‡n.
+T1: API GET
+/analytics/me?period=monthly&year=2026 T2: Bar
+chart (Victory Native) tá»•ng chi theo thĂ¡ng T3: Filter
+theo nhĂ³m / danh má»¥c báº±ng Dropdown Nexus T4:
+Hiá»ƒn thá»‹ thĂ¡ng chi nhiá»u nháº¥t
+P2
+US-044
+TĂ´i muá»‘n xem chi tiĂªu
+theo danh má»¥c (sĂ¢n,
+nÆ°á»›c, Äƒn uá»‘ng...).
+T1: API GET /analytics/me/by-category T2: Donut
+chart theo danh má»¥c T3: Danh sĂ¡ch chi tiáº¿t dÆ°á»›i chart
+vá»›i Tag mĂ u danh má»¥c T4: So sĂ¡nh vá»›i thĂ¡ng trÆ°á»›c
+P2
+Feature 6.2 â€” Thá»‘ng KĂª NhĂ³m & Xuáº¥t Dá»¯ Liá»‡u
+ID
+User Story
+Tasks
+Priority
+US-045
+TĂ´i muá»‘n xem ai chi nhiá»u
+nháº¥t / Ă­t nháº¥t trong nhĂ³m.
+T1: API GET /analytics/groups/:id/members-spending
+T2: Leaderboard vá»›i Avatar, ProgressBar (Nexus) T3:
+Toggle xem theo sá»± kiá»‡n / theo thĂ¡ng
+P2
+US-046
+TĂ´i muá»‘n xuáº¥t bĂ¡o cĂ¡o chi
+tiĂªu sá»± kiá»‡n ra PDF hoáº·c
+chia sáº».
+T1: Backend: Jasper Reports / iText táº¡o PDF T2: API
+GET /events/:id/export?format=pdf T3: Share sheet
+native (Expo Sharing) T4: Template PDF: logo, tá»•ng,
+báº£ng chi tiáº¿t, báº£ng chia tiá»n
+P3
+
+=== PAGE 16 ===
+4. Backlog Tá»•ng Há»£p
+Báº£ng tĂ³m táº¯t toĂ n bá»™ User Stories vá»›i Ä‘á»™ Æ°u tiĂªn vĂ  EPIC tÆ°Æ¡ng á»©ng.
+ID
+EPIC
+User Story
+Priority
+Status
+US-
+001
+EP-1
+ÄÄƒng kĂ½ báº±ng email/password
+P0 â€” Must
+Have
+Todo
+US-
+002
+EP-1
+ÄÄƒng nháº­p & duy trĂ¬ session
+P0 â€” Must
+Have
+Todo
+US-
+003
+EP-1
+ÄÄƒng nháº­p báº±ng Google
+P1 â€” Should
+Have
+Todo
+US-
+004
+EP-1
+Äáº·t láº¡i máº­t kháº©u qua email
+P1 â€” Should
+Have
+Todo
+US-
+005
+EP-1
+Cáº­p nháº­t profile & avatar
+P1 â€” Should
+Have
+Todo
+US-
+006
+EP-1
+Lá»‹ch sá»­ sá»± kiá»‡n Ä‘Ă£ tham gia
+P2 â€” Could
+Have
+Todo
+US-
+007
+EP-1
+Tá»•ng ná»£ / Ä‘Æ°á»£c ná»£ trĂªn profile
+P2 â€” Could
+Have
+Todo
+US-
+008
+EP-1
+Táº¡o nhĂ³m má»›i
+P0 â€” Must
+Have
+Todo
+US-
+009
+EP-1
+Má»i thĂ nh viĂªn vĂ o nhĂ³m
+P0 â€” Must
+Have
+Todo
+US-
+010
+EP-1
+Quáº£n lĂ½ thĂ nh viĂªn nhĂ³m
+P1 â€” Should
+Have
+Todo
+US-
+011
+EP-1
+Rá»i / giáº£i tĂ¡n nhĂ³m
+P1 â€” Should
+Have
+Todo
+US-
+012
+EP-1
+TĂ¬m kiáº¿m & lá»c nhĂ³m
+P2 â€” Could
+Have
+Todo
+US-
+013
+EP-2
+Táº¡o sá»± kiá»‡n má»›i
+P0 â€” Must
+Have
+Todo
+US-
+014
+EP-2
+PhĂ¢n loáº¡i sá»± kiá»‡n
+P1 â€” Should
+Have
+Todo
+US-
+015
+EP-2
+Chá»‰nh sá»­a sá»± kiá»‡n
+P1 â€” Should
+Have
+Todo
+US-
+016
+EP-2
+Huá»· / xoĂ¡ sá»± kiá»‡n
+P1 â€” Should
+Have
+Todo
+US-
+017
+EP-2
+Má»i thĂ nh viĂªn tham gia sá»± kiá»‡n
+P0 â€” Must
+Have
+Todo
+US-
+018
+EP-2
+RSVP tham gia / tá»« chá»‘i
+P1 â€” Should
+Have
+Todo
+US-
+019
+EP-2
+Danh sĂ¡ch ngÆ°á»i tham gia
+P1 â€” Should
+Have
+Todo
+US-
+020
+EP-2
+Dashboard sá»± kiá»‡n sáº¯p tá»›i
+P0 â€” Must
+Have
+Todo
+US-
+EP-2
+TĂ¬m kiáº¿m & lá»c sá»± kiá»‡n
+P2 â€” Could
+Todo
+
+=== PAGE 17 ===
+ID
+EPIC
+User Story
+Priority
+Status
+021
+Have
+US-
+022
+EP-2
+Lá»‹ch sá»± kiá»‡n theo thĂ¡ng
+P2 â€” Could
+Have
+Todo
+US-
+023
+EP-3
+ThĂªm chi phĂ­ vĂ o sá»± kiá»‡n
+P0 â€” Must
+Have
+Todo
+US-
+024
+EP-3
+PhĂ¢n loáº¡i chi phĂ­
+P1 â€” Should
+Have
+Todo
+US-
+025
+EP-3
+Sá»­a / xoĂ¡ chi phĂ­
+P1 â€” Should
+Have
+Todo
+US-
+026
+EP-3
+Xem tá»•ng & danh sĂ¡ch chi phĂ­
+P0 â€” Must
+Have
+Todo
+US-
+027
+EP-3
+Chia Ä‘á»u chi phĂ­
+P0 â€” Must
+Have
+Todo
+US-
+028
+EP-3
+Chia theo % tuá»³ chá»‰nh
+P1 â€” Should
+Have
+Todo
+US-
+029
+EP-3
+Chia sá»‘ tiá»n cá»‘ Ä‘á»‹nh
+P1 â€” Should
+Have
+Todo
+US-
+030
+EP-3
+Loáº¡i trá»« thĂ nh viĂªn khá»i khoáº£n chi
+P1 â€” Should
+Have
+Todo
+US-
+031
+EP-3
+Báº£ng tĂ³m táº¯t ná»£ (ai ná»£ ai)
+P0 â€” Must
+Have
+Todo
+US-
+032
+EP-4
+Ghi nháº­n Ä‘Ă£ tráº£ tiá»n
+P0 â€” Must
+Have
+Todo
+US-
+033
+EP-4
+XĂ¡c nháº­n Ä‘Ă£ nháº­n tiá»n
+P0 â€” Must
+Have
+Todo
+US-
+034
+EP-4
+Tá»« chá»‘i xĂ¡c nháº­n
+P1 â€” Should
+Have
+Todo
+US-
+035
+EP-4
+Chia sáº» QR / tĂ i khoáº£n ngĂ¢n hĂ ng
+P2 â€” Could
+Have
+Todo
+US-
+036
+EP-4
+Lá»‹ch sá»­ giao dá»‹ch thanh toĂ¡n
+P1 â€” Should
+Have
+Todo
+US-
+037
+EP-4
+Xem sá»‘ dÆ° cá»§a tĂ´i trong sá»± kiá»‡n
+P1 â€” Should
+Have
+Todo
+US-
+038
+EP-5
+Push notification chi phĂ­ má»›i
+P0 â€” Must
+Have
+Todo
+US-
+039
+EP-5
+Nháº¯c ná»£ chÆ°a tráº£
+P1 â€” Should
+Have
+Todo
+US-
+040
+EP-5
+Quáº£n lĂ½ loáº¡i thĂ´ng bĂ¡o
+P2 â€” Could
+Have
+Todo
+US-
+041
+EP-5
+Activity feed sá»± kiá»‡n/nhĂ³m
+P2 â€” Could
+Have
+Todo
+US-
+042
+EP-5
+Badge thĂ´ng bĂ¡o chÆ°a Ä‘á»c
+P1 â€” Should
+Have
+Todo
+US-
+043
+EP-6
+Thá»‘ng kĂª chi tiĂªu theo thĂ¡ng
+P2 â€” Could
+Have
+Todo
+
+=== PAGE 18 ===
+ID
+EPIC
+User Story
+Priority
+Status
+US-
+044
+EP-6
+Chi tiĂªu theo danh má»¥c
+P2 â€” Could
+Have
+Todo
+US-
+045
+EP-6
+Leaderboard chi tiĂªu trong nhĂ³m
+P2 â€” Could
+Have
+Todo
+US-
+046
+EP-6
+Xuáº¥t bĂ¡o cĂ¡o PDF
+P3 â€” Won't
+Have (v1)
+Todo
+MoSCoW Priority Legend
+P0 â€” Must Have (MVP): Báº¯t buá»™c cĂ³ trong release Ä‘áº§u tiĂªn. P1 â€” Should Have: Quan trá»ng, Æ°u tiĂªn
+cao trong Sprint 2-3. P2 â€” Could Have: Tá»‘t náº¿u cĂ³, khĂ´ng block release. P3 â€” Won't Have (v1): Báº£o
+lÆ°u cho roadmap tÆ°Æ¡ng lai.
+

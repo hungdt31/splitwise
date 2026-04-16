@@ -40,4 +40,14 @@ public class ApiResponse<T> {
                 .message(message)
                 .build();
     }
+
+    /**
+     * Dùng cho các endpoint khung (501) — map với backlog trong EventMate_Spec.
+     */
+    public static <T> ApiResponse<T> stub(String hint) {
+        return ApiResponse.<T>builder()
+                .status(501)
+                .message("Khung API EventMate — " + hint)
+                .build();
+    }
 }
